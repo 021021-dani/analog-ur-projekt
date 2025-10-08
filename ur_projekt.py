@@ -58,7 +58,7 @@ def draw_clock_face():
 def update_clock():
     canvas.delete("hands")  # Remove the previous hands by deleting item tags "hands"
         
-# Fjerner man først de gamle visere, så de ikke tegnes oven i hinanden)
+#  First remove the old hands so they don't overlap)
     t = time.localtime()    # Get the current local time
     hours = t.tm_hour % 12  # Convert to 12-hour format
     minutes = t.tm_min      
@@ -88,13 +88,13 @@ def update_clock():
         # Schedule this fuctions to be called again after 1000 mlliseconds(1 seconds)
     root.after(1000, update_clock)
         
-# Tegn urskiven én gang
+# Draw the clock face once
 draw_clock_face()
 
-# Start viserne og opdatering hvert sekund
+#  Start the pointers and update every second
 update_clock()
 
-# Kør GUI'en
+# Run the GUI
 root.mainloop()
     
         
